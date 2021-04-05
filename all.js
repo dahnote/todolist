@@ -1,13 +1,11 @@
-let data=[
-    {
-        "content":"待辦事項一"
-    },
-    {
-        "content":"待辦事項二"
-    }
-]
-let str=``
+let data=[]
+
+const txt=document.querySelector(".txt");
+const save=document.querySelector(".save");
+
 function render(){
+    console.log(data)
+    let str=``
     data.forEach(item=> {
         str+=`<li>${item.content} <input type="button" class='delete' value="刪除待辦"></li>`
         console.log(item)
@@ -15,8 +13,17 @@ function render(){
     const list=document.querySelector(".list");
     list.innerHTML=str
 }
-
-render()
+save.addEventListener('click',function(e){
+    // console.log(txt.value)
+    if (txt.value!==''){
+        // console.log(txt.value)
+        let obj={}
+        obj.content=txt.value
+        data.push(obj)
+        console.log(data)
+        render()
+    }
+})
 // console.log(str)
 
 // console.log('123')
