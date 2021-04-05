@@ -24,5 +24,5 @@
 //     }
 // })
 
-const title=document.querySelector(".title");
-console.log(title.getAttribute("data-num"))
+// const title=document.querySelector(".title");
+// console.log(title.getAttribute("data-num"))
