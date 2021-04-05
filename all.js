@@ -3,9 +3,8 @@ let data=[]
 const txt=document.querySelector(".txt");
 const save=document.querySelector(".save");
 const list=document.querySelector(".list");
-const deletebtn=document.querySelector(".delete");
 function render(){
-    console.log(data)
+    // console.log(data)
     let str=``
     data.forEach((item,index)=> {
         // console.log(item,index)
