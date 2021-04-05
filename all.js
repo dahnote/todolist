@@ -1,3 +1,24 @@
+let data=[
+    {
+        "content":"待辦事項一"
+    },
+    {
+        "content":"待辦事項二"
+    }
+]
+let str=``
+function render(){
+    data.forEach(item=> {
+        str+=`<li>${item.content} <input type="button" class='delete' value="刪除待辦"></li>`
+        console.log(item)
+    })
+    const list=document.querySelector(".list");
+    list.innerHTML=str
+}
+
+render()
+// console.log(str)
+
 // console.log('123')
 // const title=document.querySelector(".title");
 // title
