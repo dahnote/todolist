@@ -2,13 +2,15 @@ let data=[]
 
 const txt=document.querySelector(".txt");
 const save=document.querySelector(".save");
-
+const list=document.querySelector(".list");
+const deletebtn=document.querySelector(".delete");
 function render(){
     console.log(data)
     let str=``
-    data.forEach(item=> {
-        str+=`<li>${item.content} <input type="button" class='delete' value="刪除待辦"></li>`
-        console.log(item)
+    data.forEach((item,index)=> {
+        // console.log(item,index)
+        str+=`<li>${item.content} <input type="button" data-num="${index}" class='delete' value="刪除待辦"></li>`
+        // console.log(item)
     })
     const list=document.querySelector(".list");
     list.innerHTML=str
@@ -23,6 +25,17 @@ save.addEventListener('click',function(e){
         console.log(data)
         render()
     }
+})
+list.addEventListener('click',function(e){
+    // console.log(e.target.getAttribute("class"))
+    if (e.target.getAttribute("class")!=="delete"){
+        return
+    }
+    const index=e.target.getAttribute("data-num")
+    data.splice(index,1)
+    render()
+    // console.log('刪除')
+    // console.log(index)
 })
 // console.log(str)
 
